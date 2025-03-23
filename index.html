@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机抽签分组工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">主页</a>
+        <a href="about.html">关于</a>
+    </nav>
+    <div class="container">
+        <h1>随机抽签分组工具</h1>
+        <textarea id="names" placeholder="请输入名字，每行一个"></textarea>
+        <div class="group-input">
+            <label for="groupCount">分成组数：</label>
+            <input type="number" id="groupCount" min="1" value="1">
+        </div>
+        <div class="buttons">
+            <button onclick="generateGroups()">生成分组</button>
+            <button class="reset" onclick="resetPage()">重置</button>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
