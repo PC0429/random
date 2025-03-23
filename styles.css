@@ -35,9 +35,9 @@ nav a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 600px;
+    max-width: 400px; /* 调整最大宽度 */
     text-align: center;
-    margin: 20px;
+    margin: 20px auto; /* 居中 */
 }
 
 h1 {
@@ -146,6 +146,12 @@ button.reset:hover {
 
 /* 移动设备样式 */
 @media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        width: 95%; /* 手机端宽度更大 */
+        max-width: 100%; /* 取消最大宽度限制 */
+    }
+
     h1 {
         font-size: 20px;
     }
