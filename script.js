@@ -20,13 +20,19 @@ function generateGroups() {
     let groups;
     if (isFirstRun) {
         groups = Array.from({ length: groupCount }, () => []);
-        const groupSize = Math.ceil(names.length / groupCount); // 每组的大小
-        for (let i = 0; i < names.length; i++) {
-            const groupIndex = Math.floor(i / groupSize); // 按顺序分配到各组
-            if (groupIndex < groupCount) {
-                groups[groupIndex].push(names[i]);
+
+        // 计算每组的基本大小和剩余的成员
+        const baseSize = Math.floor(names.length / groupCount);
+        const remainder = names.length % groupCount;
+
+        let index = 0;
+        for (let i = 0; i < groupCount; i++) {
+            const groupSize = baseSize + (i < remainder ? 1 : 0); // 前 remainder 组多一个人
+            for (let j = 0; j < groupSize; j++) {
+                groups[i].push(names[index++]);
             }
         }
+
         isFirstRun = false;
     } else {
         // 随机打乱数组
